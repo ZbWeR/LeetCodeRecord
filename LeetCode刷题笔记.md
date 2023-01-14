@@ -15,7 +15,9 @@ return r;
 
 关于返回值为`r`的解释: $mid$ 满足条件说明比 $mid$ 小的都满足,因此我们要把 $l$ 右移为`mid+1`去找更大的临界点. 那么 $l$ 最后的位置再减一,就一定是最后符合条件的 $mid$.而这个位置恰巧就是$r$,因为while停止的条件是 `r<l` ,即 `r=l-1=mid`, 故返回 r.
 
-### JavaScript实现整数除法
+### JavaScript相关
+
+#### 实现整数除法
 
 JS中的除法运算默认返回的是小数,要想得到类似C++中int类型相除的结果，需要利用一些额外的取整方法.
 
@@ -25,4 +27,29 @@ JS中的除法运算默认返回的是小数,要想得到类似C++中int类型�
 | `Math.ceil()`  | 向上取整     |
 | `Math.round()` | 四舍五入取整 |
 | `parseInt()`   | 舍弃小数部分 |
+
+#### 数组初始化
+
+```js
+var qwq = new Array(5).fill(7); // [7,7,7,7,7]
+var qwq = [2,3,4,5]; // [2,3,4,5]
+var qwq = new Array(1,2,3); // [1,2,3]
+```
+
+#### 字符与数字转换
+
++ 字符转数字: 借助`charCodeAt`函数.语法规范: `stringObject.charCodeAt(index)`返回 index 处字符的Unicode编码.
+
+```js
+let s = "abcdefg";
+let pos0 = s.charCodeAt(0)-'a'.charCodeAt(0);  // 'a' -> 1
+let pos1 = s.charCodeAt(1)-'a'.charCodeAt(0);  // 'b' -> 2
+```
+
++ 数字转字符: 借助`fromCharCode`函数.语法规范:`String.fromCharCode(num)`返回Unicode编码nun对应的字符.
+
+```js
+let s = "abd";
+s += String.fromCharCode(2+'a'.charChodeAt(0)); // s = "abdc"
+```
 
