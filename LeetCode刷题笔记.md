@@ -53,3 +53,27 @@ let s = "abd";
 s += String.fromCharCode(2+'a'.charChodeAt(0)); // s = "abdc"
 ```
 
+#### replace回调函数
+
+`replace`方法的第一个参数为正则表达式,第二个参数通常为想要替换成的文本,事实上第二个参数也可以是一个函数.
+
+1. 函数的第一个参数为匹配成功的字符串.
+
+2. 函数的后面几个参数分别代表子匹配.
+
+3. **函数的返回值为替换文本**,即第一个参数的字符串变为函数的返回值
+
+```js
+var s = "2023-01-15";
+const reg = /(\d{4})-(\d{2})-(\d{2})/;
+let ans = s.replace(reg, function (word, p1, p2, p3) {
+    console.log(word, p1, p2, p3);
+    return "#";
+});
+// word: 2023-01-15
+// p1: 2023 p2: 01 p3: 15
+// 替换后: # 
+```
+
+
+
