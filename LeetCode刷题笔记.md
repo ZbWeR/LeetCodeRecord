@@ -75,5 +75,16 @@ let ans = s.replace(reg, function (word, p1, p2, p3) {
 // 替换后: # 
 ```
 
+#### 创建二维数组
 
+```js
+// 把map写在fill之后
+let Vis = new Array(n).fill(0).map(
+        ()=>new Array(m).fill(0)
+);
+// 错误方法,以下语句会在单点赋值时出现奇怪错误
+let Vis = new Array(n).fill(new Array(m).fill(0));
+```
+
+参考资料:[JavaScript修改二维数组的某个元素时，其上下元素也受到影响js](https://blog.csdn.net/qq_44879358/article/details/119717975)
 
