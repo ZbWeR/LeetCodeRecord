@@ -88,3 +88,21 @@ let Vis = new Array(n).fill(new Array(m).fill(0));
 
 参考资料:[JavaScript修改二维数组的某个元素时，其上下元素也受到影响js](https://blog.csdn.net/qq_44879358/article/details/119717975)
 
+#### [for in] 与 [for of]
+
+在对 Map 进行遍历时遇到了这个问题,最初我是采用 for in的方法去遍历,但是没有效果.
+
+正确遍历 Map 的方法:
+
+```js
+var qwq = new Map();
+qwq.set(1, 2333);
+qwq.set(2, 'a');
+qwq.set(3, true);
+for (let [pos, val] of qwq) {
+    console.log(pos);
+}
+```
+
+参考资料: [for...in - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in)
+
